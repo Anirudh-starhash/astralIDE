@@ -31,114 +31,69 @@ def add_folder():
             'msg':'Some Error!'
         }),201
         
+
+        
+        
         
 @folder_blueprint.route("/getFolders",methods=['GET','POST'])
 def getFolders():
     
-    f=db.session.execute(db.Select(Folders)).scalars().all()
+    main={
+        'name':'main',
+        'files':[],
+        'folders':{}
+    }
+ 
+    # this is the initial setup for main with nesting=0
     
-    
-    if f==None:
-        return jsonify({
-            'msg':'Some Error'
-        }),201
-     
-    folders=[]
-    
-    for folder in f:
-        folders.append({
-            'folder_name':folder.folder_name,
-            'no_of_files':folder.no_of_files,
-            'folder_id':folder.folder_id,
-            'folder_toggle':folder.folder_toggle
-        })
-        
-    if folders==[]:
-        return jsonify({
-            'id':0
-        }),200
-        
-    
-    return jsonify({
-        'folder':folders,
-        'id':1
-    }),200
-    
-folder_blueprint.route("/toggle_and_getInfo",methods=['GET','POST'])
-def getInfo():
-    data=request.get_json()
-    folder_name=data.get("folder_name")
-    folder_id=data.get("folder_id")
-    
-    f=db.session.execute(db.Select(Folders).where(Folders.folder_id==folder_id)).scalar()
-    f.folder_toggle=1
-    db.session.commit()
-    n=f.nesting
-    
-    setup={}
-    parent_folder=folder_name
-    setup["files"]={}
-    setup["folders"]={}
-    while n!=0:
-        
-        folder_content=db.session.execute(db.Select(Folders).where(Folders.parent_folder==parent_folder)).scalars().all()
-        # we get all folders inside the required folder
-        file_content=db.session.execute(db.Select(File).where(File.folder_name==folder_name)).scalars().all()
-        
-       
-        
-        #n=2 
-        {
-            'name':'main',
-            'files':{
-                '1':'abc.cpp',
-                '3':'xyz.java',
-                '7':'cd.py'
+    main={
+     'id':0,
+     'name':'main',
+     'parent_folder':None,
+     'files': ['abc.cpp','xyz.java','cd.py'],
+     'folders':[
+            {
+                'id':1,
+                'name':'new_folder1',
+                'parent_folder':'main',
+                'files':[],
+                'folders' :{}  
             },
-            'folders':{
-                
-                {
-                     'name':'new_folder4',
-                     'files':{},
-                     'folders':{}
-                }
+        
+            {
+                'id':2,
+                'name':'new_folder2',
+                'parent_folder':'main',
+                'files':[],
+                'folders' :{}  
+            },
+        
+            {
+                'id':3,
+                'name':'new_folder3',
+                'parent_folder':'main',
+                'files':[],
+                'folders' :{}  
             }
-        }
-        
-        
-        {
-            'name':'main',
-            'files':{},
-            'folders':{
-                {
-                    'name':'new_folder1',
-                    'files':{},
-                    'folders':{}
-                },
-                {
-                    'name':'new_folder2',
-                    'files':{},
-                    'folders':{}
-                },
-                {
-                    'name':'new_folder3',
-                    'files':{},
-                    'folders':{}
-                },
-                
-            }
-        }
-        
-        # this is the outlayout of our original main folder
-        
-        {
-            'name':'main',
-            'file':{},
-            'folders':{}
-        }
-        # this was it initial 
-        # goes on till the end nesting a big json api
-        
+        ]
+    }
+    
+    # this is after creating three folders in it nesting=1 and 1,2,3 are respective id of folders main=0
+       
+    # here main is m-way tree 
+    
+    # in terms of c++ whats our folder structure named as
+    
+    # map<string,variable_dataType> // variable_dataType can be a vector , map,int,string, char
+    
+    # class Node{
+    #     string name;
+    #     string parent_folder;
+    #     vector<string> files;
+    #     vector<Node*> folders; 
+    # }
+    
+    
         
     
     

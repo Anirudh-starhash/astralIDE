@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
     <div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -153,3 +154,6 @@
     transform: translate(10px);
   }
 </style>
+=======
+
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16

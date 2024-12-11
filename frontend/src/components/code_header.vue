@@ -2,10 +2,20 @@
     <div>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <div>
+<<<<<<< HEAD
             <nav class="navbar navbar-default" style="background-color: #cbd5e1; height:60%;">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a @click="backtoHome" style="color: blue;">
+=======
+            <nav class="navbar navbar-default" style="background-color: aliceblue; height:60%;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand"  style="color: darkblue;" href="#">Code Editor</a>
+                    </div>
+                    <div class="content">
+                        <a href="#" style="color: blue;">
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
                             <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-house-add-fill x blue" viewBox="0 0 16 16">
                                 <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/>
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
@@ -14,12 +24,17 @@
                             <p class="black">Home</p>
                         </a>
                         
+<<<<<<< HEAD
                         <a @click="Fileoptions" class="dropdown">
+=======
+                        <a href="#">
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-archive-fill x blue" viewBox="0 0 16 16">
                                 <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"/>
                             </svg>
                             <p class="black">File</p>
                         </a>
+<<<<<<< HEAD
                         <div v-if="isFilePopupVisible" class="dropdown-menu">
                             <a class="dropdown-item" @click="optionSelected('New Text File')">
                                 <div class="mcontent">
@@ -115,12 +130,17 @@
                         </div>
                         
                         <a @click="Editoptions" class="dropdown">
+=======
+                        
+                        <a href="#" style="color: blue;">
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card x blue" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
                                 <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                               </svg>
                             <p class="black">Edit</p>
                         </a>
+<<<<<<< HEAD
 
                         <div v-if="isEditPopupVisible" class="dropdown-menu">
                             <a class="dropdown-item" @click="optionSelected('Undo')">
@@ -564,11 +584,15 @@
                         </div>
 
                         <a @click="Terminaloptions" class="dropdown">
+=======
+                        <a href="#" style="color: blue;">
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-terminal-fill x blueb" viewBox="0 0 16 16">
                                 <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9.5 5.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1m-6.354-.354a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708L4.793 6.5z"/>
                             </svg>
                             <p class="black">Terminal</p>
                         </a>
+<<<<<<< HEAD
                         <div v-if="isTerminalPopupVisible" class="dropdown-menu">
                             <a class="dropdown-item" @click="optionSelected('New Terminal')">
                                 <div class="mcontent">
@@ -698,6 +722,8 @@
                             </svg>
                             <p class="black">Logout</p>
                         </a>
+=======
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
                     </div>
                 </div>
             </nav>
@@ -706,6 +732,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { useRouter } from 'vue-router';
 import axios from 'axios'
 export default {
@@ -838,10 +865,15 @@ export default {
             }
         }
     }
+=======
+export default {
+    
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
 }
 </script>
 
 <style scoped>
+<<<<<<< HEAD
   .navbar-header {
     display: flex;
     align-items: center;
@@ -867,20 +899,36 @@ export default {
     color:black;
     font-weight:bold;
     font-size:13px;
+=======
+  .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+    padding-top:10px;
+  }
+  .black{
+    color:black;
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
   }
   .blue{
     color:blue;
     font-size: 20px;;
   }
+<<<<<<< HEAD
   .red{
     color:red;
     font-size: 20px;
   }
+=======
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
   .blueb{
     color:black;
     font-size: 20px;;
   }
   .x{
+<<<<<<< HEAD
     height:25px;
     width:40px;
   }
@@ -926,4 +974,9 @@ export default {
     flex-direction: row;
     justify-content: space-between;
 }
+=======
+    height:30px;
+    width:40px;
+  }
+>>>>>>> 1f3b79616d5c59c5ea3203507e0ca135777e9f16
 </style>
